@@ -1,0 +1,14 @@
+{% set netdata = salt.grains.filter_by({
+    'default': {
+        'pkgs': ['netdata'],
+        'service': 'netdata',
+        'conf_file': '/etc/netdata/netdata.conf',
+        'config': {
+            'key': 'value',
+        },
+    },
+    'Debian': {
+    },
+    'RedHat': {
+    },
+}, grain='os_family', merge=salt.pillar.get('netdata:overrides'), base='default') %}

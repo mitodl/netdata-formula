@@ -1,0 +1,9 @@
+name: netdata
+os: RedHat, CentOS, Ubuntu, Debian
+os_family: RedHat, Debian
+version: 1.0
+release: 1
+summary: SaltStack formula for the Netdata monitoring agent
+description: SaltStack formula for the Netdata monitoring agent
+top_level_dir: netdata
+recommended: 
