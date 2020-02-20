@@ -19,7 +19,7 @@ Available states
 ``netdata``
 -----------
 
-TODO - add description of this state
+Runs `install` and `config` states
 
 ``netdata.install``
 ----------------
