@@ -4,11 +4,14 @@
         'service': 'netdata',
         'conf_file': '/etc/netdata/netdata.conf',
         'config': {
-            'key': 'value',
+            'global': {
+                'hostname': salt.grains.get('id'),
+                'memory mode': 'dbengine'
+            }
         },
     },
     'Debian': {
     },
     'RedHat': {
     },
-}, grain='os_family', merge=salt.pillar.get('netdata:overrides'), base='default') %}
+}, grain='os_family', merge=salt.pillar.get('netdata'), base='default') %}
