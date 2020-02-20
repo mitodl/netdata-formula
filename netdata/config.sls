@@ -12,4 +12,4 @@ netdata-config:
     - watch_in:
       - service: netdata_service_running
     - require:
-      - pkg: netdata
+      - cmd: install_netdata
