@@ -33,6 +33,11 @@ Handles installation of netdata
 
 Handles configuration of netdata
 
+``netdata.tests``
+-----------------
+
+Tests the installation
+
 
 Template
 ========
