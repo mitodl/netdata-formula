@@ -1,7 +1,8 @@
 # -*- mode: yaml -*-
 netdata:
-  overrides:
-    pkg: netdata
-    conf_file: /usr/local/etc/netdata/netdata.conf
+  service: netdata
+  conf_file: /etc/netdata/netdata.conf
   config:
-    key: othervalue
+    global:
+      hostname: myhost
+      'memory mode': dbengine

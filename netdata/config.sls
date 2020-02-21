@@ -9,6 +9,9 @@ netdata-config:
     - name: {{ netdata.conf_file }}
     - source: salt://netdata/templates/conf.jinja
     - template: jinja
+    - context:
+        config: {{ netdata.config | tojson }}
+    - makedirs: True
     - watch_in:
       - service: netdata_service_running
     - require:
