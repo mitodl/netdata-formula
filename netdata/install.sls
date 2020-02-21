@@ -7,6 +7,6 @@ install_netdata:
   cmd.script:
     - name: salt://netdata/files/install.sh
     - creates:
-      - /usr/sbin/netdata
+      - /opt/netdata/bin/netdata
     - require_in:
       - service: netdata_service_running
