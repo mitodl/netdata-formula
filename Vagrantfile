@@ -16,15 +16,15 @@ Vagrant.configure(2) do |config|
   config.vbguest.auto_update = false
 
   config.vm.define "debian" do |debian|
-    debian.vm.box = "debian/stretch64"
+    debian.vm.box = "bento/debian-10"
   end
 
   config.vm.define "centos" do |centos|
-    centos.vm.box = "centos/7"
+    centos.vm.box = "centos/8"
   end
 
   config.vm.define "ubuntu" do |ubuntu|
-    ubuntu.vm.box = "ubuntu/xenial64"
+    ubuntu.vm.box = "bento/ubuntu-18.04"
   end
   
 
