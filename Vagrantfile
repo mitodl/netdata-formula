@@ -13,7 +13,8 @@ Vagrant.configure(2) do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
 
-  
+  config.vbguest.auto_update = false
+
   config.vm.define "debian" do |debian|
     debian.vm.box = "debian/stretch64"
   end
@@ -88,7 +89,7 @@ Vagrant.configure(2) do |config|
   #run highstate
   config.vm.provision :salt do |salt|
     salt.minion_config = 'minion.conf'
-    salt.bootstrap_options = '-U -Z'
+    salt.bootstrap_options = '-U'
     salt.masterless = true
     salt.run_highstate = true
     salt.colorize = true
