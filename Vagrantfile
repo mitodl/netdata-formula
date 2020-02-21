@@ -90,7 +90,7 @@ Vagrant.configure(2) do |config|
   #run highstate
   config.vm.provision :salt do |salt|
     salt.minion_config = 'minion.conf'
-    salt.bootstrap_options = '-U'
+    salt.bootstrap_options = '-U -x python3'
     salt.masterless = true
     salt.run_highstate = true
     salt.colorize = true
