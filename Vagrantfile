@@ -87,8 +87,6 @@ Vagrant.configure(2) do |config|
   
   config.vm.provision "shell", path: "scripts/gitfs_deps.sh"
 
-  config.vm.provision "shell", path: "scripts/testinfra.sh"
-
   #run highstate
   config.vm.provision :salt do |salt|
     salt.minion_config = 'minion.conf'
