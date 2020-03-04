@@ -1,3 +1,12 @@
+{# Netdata configuration defaults.
+
+   Includes defaults for the Elasticsearch plugin to keep it from incurring
+   too much CPU usage with its cluster and indices API stats requests.
+   Elasticsearch nodes may also benefit from a longer "update every" setting
+   than the default of 1. You can specify this in the pillar for the node,
+   under `netdata:config:global'.
+#}
+
 {% set netdata = salt.grains.filter_by({
     'default': {
         'pkgs': ['netdata'],
@@ -7,6 +16,18 @@
             'global': {
                 'hostname': salt.grains.get('id'),
                 'memory mode': 'dbengine'
+            }
+        },
+        'plugin_configs': {
+            '/opt/netdata/etc/netdata/python.d/elasticsearch.conf': {
+                'local': {
+                    'host': '127.0.0.1',
+                    'port': '9200',
+                    'node_status': 'yes',
+                    'cluster_health': 'yes',
+                    'cluster_stats': 'no',
+                    'indices_stats': 'no'
+                }
             }
         },
     },
