@@ -2,7 +2,7 @@
     'default': {
         'pkgs': ['netdata'],
         'service': 'netdata',
-        'conf_file': '/etc/netdata/netdata.conf',
+        'conf_file': '/opt/netdata/etc/netdata/netdata.conf',
         'config': {
             'global': {
                 'hostname': salt.grains.get('id'),
