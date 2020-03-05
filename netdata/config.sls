@@ -21,7 +21,8 @@ netdata-config:
 netdata-plugin-{{ config_file }}:
   file.managed:
     - name: {{ config_file }}
-    - contents: {{ settings }}
+    - contents: |
+        {{ settings | yaml(False) | indent(8) }}
     - makedirs: True
     - watch_in:
       - service: netdata_service_running
